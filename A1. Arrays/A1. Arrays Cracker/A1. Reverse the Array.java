@@ -11,7 +11,7 @@ Output : arr[] = {2, 1, 5, 4}
 
 Code:
 
-//========================================= Approach 1 ==========================
+//========================================= Approach 1 (Without using extra space) ==========================
 package ArraysCracker;
 
 import java.util.Scanner;
