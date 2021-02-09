@@ -99,7 +99,7 @@ public class KthSmallestElementInAnArray {
 		return arr;
 	}
   
-  public static int kthLargestUsingHeap( int arr[], int k) {
+        public static int kthLargestUsingHeap( int arr[], int k) {
 		
 		PriorityQueue<Integer> queue= new PriorityQueue<Integer>(); //ek queue banayenge aur isme array ke saare elements dal denge and saare elements delete kardenge except jitne k elements hai and woh k elements apne aap queue mai arrange hojayenge 
 		
@@ -111,6 +111,21 @@ public class KthSmallestElementInAnArray {
 			}
 		}
 		return queue.peek(); //jo queue ke top pe hoga wahi humara answer hoga.
+	}
+	
+	public static int kthMinimumUsingHeap(int arr[], int k) {
+		//java mai by default priority queue hoti hai woh min heap hoti hai but we need max heap coz hum kth smallest wala program kr rhe hai, agar kth largest wala chahiye to hum max heap use karenge
+		PriorityQueue<Integer> queue= new PriorityQueue<Integer>(Collections.reverseOrder());
+		
+		for( int i=0; i< arr.length; i++) {
+			
+			queue.add(arr[i]);
+			
+			if( queue.size() > k) {
+				queue.poll();
+			}
+		}
+		return queue.peek();
 	}
 	
 	public static void main(String[] args) {
