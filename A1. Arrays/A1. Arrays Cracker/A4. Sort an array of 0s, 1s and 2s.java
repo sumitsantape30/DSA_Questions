@@ -13,8 +13,9 @@ Code:
 //======================================Aprroach 1 =============================
 We can simply sort the array using a sorting algorithm. It will take O(logn) time for sorting and O(nlogn) time for sorting n elements, and O(1) space.
 
-
-//===================================== Approach 2 =============================
+//====================================Approach 2 (Simple Counting)================================
+	
+//===================================== Approach 3 (Variation of dutch national flag alorithm) =============================
 package ArraysCracker;
 
 import java.util.Scanner;
