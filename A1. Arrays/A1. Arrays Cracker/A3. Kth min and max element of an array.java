@@ -106,7 +106,8 @@ public class KthSmallestElementInAnArray {
 		for( int i=0; i< arr.length; i++) {
 			queue.add(arr[i]); //ek ek krke array ke saare elements qeueue mai dalenge
 			
-			if( queue.size() > k) {  // queue ke sare elements delete karenge except K elements
+			//queue mai elements dalne ke bad woh apne aap sort hojayenge
+			if( queue.size() > k) {  // queue ke sare elements delete karenge except K elements. hum kth largest chahiye aur humare queue mai 
 				queue.poll();
 			}
 		}
