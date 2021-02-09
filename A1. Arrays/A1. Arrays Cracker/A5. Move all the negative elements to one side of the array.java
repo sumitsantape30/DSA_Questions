@@ -33,7 +33,7 @@ public class MoveAllNegToOneSide {
 	
 	public static void shiftAll(int arr[], int left, int right) {
 		
-		while( left <= right) { //jabtak left right chota hai or bada hai tabtak loop ke execute karne wale hai
+		while( left <= right) { //jabtak left right se chota or equal hai tabtak loop ko execute karne wale hai
 			
 			//agar left and right dono elments negative hai to we are going to increse left pointer only. Left agar negative hai aur right bhi negative hai to woh positive ko bolega ki ruk mai aage badhke dekhta hu ki age positive number hai kya agar positive number hoga hum swap karenge coz right mai mere pas negative value hai isliye sirf left aage bada right wahipe rahega.
 			if( arr[left] < 0 && arr[right] < 0) {
