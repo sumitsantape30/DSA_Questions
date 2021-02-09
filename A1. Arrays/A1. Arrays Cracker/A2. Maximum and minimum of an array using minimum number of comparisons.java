@@ -81,10 +81,10 @@ Time Complexity: O(n)
 
 //================================= Approach 3=================================================
 // agar even number of elements hai to first two elements ke min and max ko as minimum and maximum initialise karenge.
-//agar odd number of elements hai to initialse min and max as first element, and baki elements ko pick them in pairs and compare their maximum and minimum with max and min respectively. 
+//agar odd number of elements hai to initialize min and max as first element, and baki elements ko pick them in pairs and compare their maximum and minimum with max and min respectively. 
 // even number of elements hai aur hum pair mai pick karke compare karre isliye first two ko min max assume kiya taki last mai koi element bach na jaye. Aur odd number of elements hai to sirf first element ko min max assume karre taki bache hue elements mai pair wise compare ho ske.
 	
-	package ArraysCracker;
+package ArraysCracker;
 import java.util.Scanner;
 
 class Pair{
