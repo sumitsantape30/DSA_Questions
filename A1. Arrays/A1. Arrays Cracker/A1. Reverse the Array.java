@@ -29,7 +29,7 @@ public class ReversetheArray {
 		return arr;
 	}
 
-	public static int[] reverse(int arr[]) {
+	public static void reverse(int arr[]) {
 
 		// hum do pointers rakhenge i and j, i ko array ke shuruwat mai rakhgenge and aur j ko rakhenge array ke last mai means j= arr.length-1 pe (humari indexing 0 se n-1 tak rehti hai)
 		int i = 0; // i ko rakha array ki shuruwat mai
@@ -44,7 +44,7 @@ public class ReversetheArray {
 			 i++;
 			 j--;
 		}
-		return arr;
+		
 	}
 	
 	public static void print(int arr[]) {
