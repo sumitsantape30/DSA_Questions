@@ -1,3 +1,4 @@
+=======================For sorted arrays================================================================================================================
 Union and Intersection of two sorted arrays
 
 Given two sorted arrays, find their union and intersection.
@@ -13,6 +14,78 @@ Input : arr1[] = {2, 5, 6}
 Output : Union : {2, 4, 5, 6, 8, 10} 
          Intersection : {6}
 
+//==========================Approach 1 (Using Map)=============================
+Code:
+package ArraysCracker;
+
+import java.util.Scanner;
+import java.util.HashSet;
+
+public class UnionandIntersection {
+
+	public static int[] takeInput() {
+
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+
+		int arr[] = new int[n];
+
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = s.nextInt();
+		}
+		return arr;
+	}
+
+	public static void Union(int arr1[], int arr2[]) {
+
+		HashSet<Integer> hs1 = new HashSet<>();
+
+		for (int i = 0; i < arr1.length; i++) {
+			hs1.add(arr1[i]);
+		}
+
+		for (int i = 0; i < arr2.length; i++) {
+			hs1.add(arr2[i]);
+		}
+		System.out.println(hs1);
+	}
+
+	public static void intersection(int arr1[], int arr2[]) {
+
+		HashSet<Integer> hs1 = new HashSet<Integer>();
+		HashSet<Integer> hs2 = new HashSet<Integer>();
+
+		for (int i = 0; i < arr1.length; i++) {
+			hs1.add(arr1[i]);
+		}
+
+		for (int i = 0; i < arr2.length; i++) {
+			if (hs1.contains(arr2[i])) {
+				hs2.add(arr2[i]);
+			}
+		}
+		System.out.println(hs2);
+	}
+
+	public static void main(String[] args) {
+
+		int arr1[] = takeInput();
+		int arr2[] = takeInput();
+		Union(arr1, arr2);
+		intersection(arr1, arr2);
+	}
+
+}
+
+Output:
+5
+1 3 5 7 9
+4
+2 3 5 6
+[1, 2, 3, 5, 6, 7, 9]
+[3, 5]
+
+//=============================================Approach 2 (Using merge operation)=============================
 
 
 
@@ -26,6 +99,8 @@ Output : Union : {2, 4, 5, 6, 8, 10}
 
 
 
+
+================================ For unsorted Arrays===================================================================
 Given two arrays A and B of size N and M respectively. The task is to find union between these two arrays.
 
 Union of the two arrays can be defined as the set containing distinct elements from both the arrays. If there are repetitions, then only one occurrence of element should be printed in union.
