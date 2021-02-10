@@ -86,18 +86,74 @@ Output:
 [3, 5]
 
 //=============================================Approach 2 (Using merge operation)=============================
+package ArraysCracker;
 
+import java.util.Scanner;
+import java.util.HashSet;
 
+public class UnionandIntersection {
 
+	public static int[] takeInput() {
 
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
 
+		int arr[] = new int[n];
 
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = s.nextInt();
+		}
+		return arr;
+	}
 
+	public static void Union(int arr1[], int arr2[]) {
 
+		HashSet<Integer> hs1 = new HashSet<>();
 
+		for (int i = 0; i < arr1.length; i++) {
+			hs1.add(arr1[i]);
+		}
 
+		for (int i = 0; i < arr2.length; i++) {
+			hs1.add(arr2[i]);
+		}
+		System.out.println(hs1);
+	}
+	
+	public static void intersectionbymerge(int arr1[], int arr2[]) {
+		
+		int i=0;
+		int j=0;
+		int n = arr1.length;
+		int m= arr2.length;
+		
+		HashSet<Integer> intersect = new HashSet<Integer>();
+		
+		while( i < n && j < m) { //jabtak array ke size rane mai hai tabtak karenge
+			
+			if( arr1[i] > arr2[j]) { //ith element chota hai to usko aage badhayenge
+				i++;
+			}else if( arr2[j] > arr1[i]) { //jth element chota hai to usko aage badhayenge
+				j++;
+			}else { //agar dono same hai to usko add kar denge and dono ko aage badhayenge
+				
+				intersect.add(arr1[i]);
+				i++;
+				j++;
+			}
+		}
+		for( int ele: intersect) {
+			System.out.println(ele);
+		}
+	}
+	
+	public static void main(String[] args) {
 
-
+		int arr1[] = takeInput();
+		int arr2[] = takeInput();
+		intersectionbymerge(arr1, arr2);
+	}
+}
 
 
 ================================ For unsorted Arrays===================================================================
