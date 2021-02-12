@@ -33,7 +33,7 @@ public class RotateAnArray {
 		
 		int temp= arr[n-1]; //jo last index pe element hai usko temp mai dal diye 
 		
-		for( int i= n-1 ; i>0 ; i--) {
+		for( int i= n-1 ; i>0 ; i--) { 
 			arr[i]= arr[i-1];
 		}
 		arr[0]= temp;
@@ -47,7 +47,7 @@ public class RotateAnArray {
 		
 		int temp= arr[0];
 		
-		for( int i= 0; i< n-1 ; i++) {
+		for( int i= 0; i< n-1 ; i++) { //n-1 isliye karre coz jo sabse last wala index hai woh khali rehna chahiye taki n-1 th index hum temp ki value dal ske
 			arr[i]= arr[i+1];
 		}
 		arr[n- 1]= temp;
