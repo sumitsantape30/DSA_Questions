@@ -1,6 +1,5 @@
 Move all negative numbers to beginning and positive to end with constant extra space
-Difficulty Level : Easy
- Last Updated : 22 Dec, 2020
+
 An array contains both positive and negative numbers in random order. Rearrange the array elements so that all negative numbers appear before all positive numbers.
 Examples : 
 
