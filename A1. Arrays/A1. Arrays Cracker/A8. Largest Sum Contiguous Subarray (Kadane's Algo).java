@@ -60,7 +60,7 @@ public class KadanesAlgo {
 		//ab loop chalayenge
 		for( int i=0; i< arr.length; i++) { //arr[i] yeh decide krta hai ki mai pichli train mai shamil hou yeh decide krta hai. kaise decide krta hai? agar piche se sum positive aaa rha hai to woh usime shamil ho leta hai ki usne sath hi rehne mai fayda hai so usme add ho lete hai
 			
-			if( csum > 0) {
+			if( csum >= 0) {
 				csum += arr[i];
 				//pichese positive ara tha to usime shamil ho liye
 			}else {
