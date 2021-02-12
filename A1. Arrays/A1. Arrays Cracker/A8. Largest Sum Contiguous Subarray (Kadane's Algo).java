@@ -64,9 +64,8 @@ public class KadanesAlgo {
 				csum += arr[i];
 				//pichese positive ara tha to usime shamil ho liye
 			}else {
-				//but agar piche se sum negative arra hai to hum usme nhi shamil honge hum jaha pe hai wahise shuru karenge
+				//but agar piche se sum negative arra hai to hum usme shamil nhi honge hum jaha pe hai wahise shuru karenge
 				csum= arr[i]; //upae wale mai humne csum += arr[i] kiya means hum usme shamil ho rhe and isme hum keh rhe ki humse new shuruwat hogi 
-				
 			}
 			
 			//aur har bar jo current sum bana woh overall sum ko challenge krke dekhta hai agar usse better hai to overall sum update ho jati hai
