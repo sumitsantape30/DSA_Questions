@@ -1,10 +1,7 @@
 
 Kadane's Algorithm 
-Medium Accuracy: 51.0% Submissions: 45863 Points: 4
 Given an array arr of N integers. Find the contiguous sub-array with maximum sum.
-
- 
-
+	
 Example 1:
 
 Input:
@@ -88,3 +85,5 @@ public class KadanesAlgo {
 	}
 
 }
+
+Video: https://youtu.be/VMtyGnNcdPw
