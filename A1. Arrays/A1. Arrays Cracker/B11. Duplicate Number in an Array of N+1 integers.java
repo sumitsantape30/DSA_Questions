@@ -69,3 +69,54 @@ The sort invocation costs O(nlgn) time in Java, so it dominates the subsequent l
 Here, we sort nums in place, so the memory footprint is constant. If we cannot modify the input array, then we must allocate linear space for a copy of nums and sort that instead.
  
 //==================================================================== Approach 2 =========================================
+If we store each element as we iterate over the array, we can simply check each element as we iterate over the array
+
+Code:
+package ArraysCracker;
+
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.HashSet;
+
+public class DuplicateNumber {
+
+	public static int[] takeInput() {
+
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+		int arr[] = new int[n];
+
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = s.nextInt();
+		}
+		return arr;
+	}
+		
+	public static int getDuplicateUsingSet(int arr[]) {
+		
+		HashSet<Integer> set= new HashSet<Integer>();
+		
+		for( int ele: arr) {
+			
+			if( set.contains(ele)) {
+				return ele;
+			}
+			
+			set.add(ele);
+		}
+		return -1;
+	}
+
+	public static void main(String[] args) {
+
+		int arr[] = takeInput();
+		int duplicate = getDuplicateUsingSet(arr);
+		System.out.println(duplicate);
+	}
+
+}
+
+Time Complexity: O(n)
+Space : O(n) 
+	
+// ========================================Approach 3=======================================================
