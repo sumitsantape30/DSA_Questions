@@ -120,3 +120,56 @@ Time Complexity: O(n)
 Space : O(n) 
 	
 // ========================================Approach 3=======================================================
+Floyd's Tortoise and Hare (Cycle Detection)
+
+Code:
+
+package ArraysCracker;
+
+import java.util.Scanner;
+
+public class DuplicateNumber {
+
+	public static int[] takeInput() {
+
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+		int arr[] = new int[n];
+
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = s.nextInt();
+		}
+		return arr;
+	}
+	public static int deplicateusingTortoise(int arr[]) {
+		
+		// we are initially pointing our fast and slow pointer to the first element, and the we'll move the slow pointer by one and fast pointer by two
+		int slow= arr[0];
+		int fast= arr[0];
+		
+		while( slow != fast) { //we'll keep moving until they meet at one point as we know they'll meet
+			slow= arr[slow]; //moving slow pointer by one
+			fast= arr[arr[fast]]; // moving fast pointer by two
+		}
+		
+		//after loop they must have met at one point and now after they meet we keep the slow pointer where it was and move fast pointer to the first position and after that I start moving the slow and fast pointer unless and until they meet
+		fast= arr[0];
+		while( slow != fast) {
+			//we'll move slow pointer by one and fast pointer by one
+			slow= arr[slow];
+			fast= arr[fast];
+			//whenever they meet either of slow or fast will be my answer so we can return one of them
+		}
+		return slow;
+	}
+
+	public static void main(String[] args) {
+
+		int arr[] = takeInput();
+		int duplicate = deplicateusingTortoise(arr);
+		System.out.println(duplicate);
+	}
+
+}
+
+Video: https://youtu.be/32Ll35mhWg0
