@@ -68,3 +68,4 @@ The sort invocation costs O(nlgn) time in Java, so it dominates the subsequent l
  Space complexity : O(1) 
 Here, we sort nums in place, so the memory footprint is constant. If we cannot modify the input array, then we must allocate linear space for a copy of nums and sort that instead.
  
+//==================================================================== Approach 2 =========================================
