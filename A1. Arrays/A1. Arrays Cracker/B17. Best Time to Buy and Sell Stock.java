@@ -12,3 +12,49 @@ Example 2:
 Input: prices = [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transactions are done and the max profit = 0.
+
+ //=====================================================Approach 1==============================================
+ 
+ //================================================== Approach 2=============================================================
+ package ArraysCracker;
+
+import java.util.Scanner;
+
+public class buyAndsellStocks {
+	
+	public static int[] takeInput() {
+		Scanner s=new Scanner(System.in);
+		int n= s.nextInt();
+		
+		int arr[]= new int[n];
+		
+		for( int i=0; i< arr.length; i++) {
+			arr[i]= s.nextInt();
+		}
+		return arr;
+	}
+	
+	public static int maxProfit( int prices[]) {
+		
+		int minPrice= Integer.MAX_VALUE; //we store minimal as integer.max value
+		int maxprofit= 0; //we set the max profit as zero
+		
+		for( int i=0; i< prices.length; i++) { //we traverse for the entire prices of stocks and we keep updating the minimal prize if it is minimum
+			if( prices[i] < minPrice) {
+				minPrice= prices[i];
+				
+				//after that if you see profit made is greater than the max profit you stored, you simply update the max profit
+			}else if( prices[i] - minPrice > maxprofit) {
+				maxprofit= prices[i] - minPrice;
+			}
+		}
+		return maxprofit;
+	}
+
+	public static void main(String[] args) {
+
+		int arr[]= takeInput();
+		int profit= maxProfit(arr);
+		System.out.println(profit);
+		}
+}
