@@ -171,5 +171,6 @@ public class DuplicateNumber {
 	}
 
 }
-
+Time complexity : O(n)
+Space complexity : O(1)
 Video: https://youtu.be/32Ll35mhWg0
