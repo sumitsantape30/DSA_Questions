@@ -64,3 +64,65 @@ public class CountPairswithgivensum {
 
 Time Complexity: O(n2) 
 Auxiliary Space: O(1)
+	
+//======================================================= Aprroach 2=====================================================================
+package ArraysCracker;
+
+import java.util.Scanner;
+import java.util.HashMap;
+
+public class CountPairswithgivensum {
+	
+	public static int[] takeInput() {
+		Scanner s= new Scanner(System.in);
+		int n= s.nextInt();
+		int arr[]= new int[n];
+		for( int i=0; i< arr.length; i++) {
+			arr[i]= s.nextInt();
+		}
+		return arr;
+	}
+	
+	public static int countPair( int arr[], int sum) {
+		
+		int count=0;
+		for( int i=0; i< arr.length -1; i++) {
+			for( int j= i+1; j< arr.length; j++) {
+				if( arr[i]+ arr[j] == sum) {
+					count++;
+				}
+			}
+		}
+		return count;
+	}
+	
+	public static int count(int arr[], int sum) {
+		
+		HashMap<Integer, Integer> hm= new HashMap<Integer,Integer>(); //ek ma lenge
+		int count=0; // humara count initially zero rahega
+		
+		for( int i : arr) {
+			hm.put(arr[i], i); // ek ek karke saari values map mai dal denge
+		}
+		
+		//ab check karenge ki kya sum- arr[i] exist krta hai agar exist krta hai to count++ karenge;
+		
+		for( int i=0; i< arr.length; i++) {
+			
+			int target=  sum- arr[i];
+			if( hm.containsKey(target)) {
+				count++;
+			}
+			
+		}
+		return count;
+	}
+	
+	public static void main(String[] args) {
+
+		int arr[]= takeInput();
+		int count= countPair(arr, 9);
+		System.out.println(count);
+	}
+}
+
