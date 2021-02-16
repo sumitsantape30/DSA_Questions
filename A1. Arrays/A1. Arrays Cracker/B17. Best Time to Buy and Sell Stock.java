@@ -14,7 +14,46 @@ Output: 0
 Explanation: In this case, no transactions are done and the max profit = 0.
 
  //=====================================================Approach 1==============================================
- 
+ package ArraysCracker;
+
+import java.util.Scanner;
+
+public class buyAndsellStocks {
+	
+	public static int[] takeInput() {
+		Scanner s=new Scanner(System.in);
+		int n= s.nextInt();
+		
+		int arr[]= new int[n];
+		
+		for( int i=0; i< arr.length; i++) {
+			arr[i]= s.nextInt();
+		}
+		return arr;
+	}
+	
+	public static int profit(int prices[]) {
+		
+		int maxProfit= 0;
+		
+		for( int i=0; i< prices.length - 1; i++) {
+			for( int j = i+ 1; j< prices.length; j++) {
+				int profit= prices[j] - prices[i];
+				if( profit > maxProfit) {
+					maxProfit= profit;
+				}
+			}
+		}
+		return maxProfit;
+	}
+	public static void main(String[] args) {
+
+		int arr[]= takeInput();
+		int maxProfit= profit(arr);
+		System.out.println(maxProfit);
+		}
+}
+
  //================================================== Approach 2=============================================================
  package ArraysCracker;
 
