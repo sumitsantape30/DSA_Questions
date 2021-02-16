@@ -26,6 +26,32 @@ are same, so there is no inversion count.
  Code:
 
 //============================================================= Approach 1========================================
+//Traverse through the array and for every index find the number of smaller elements on its right side of the array. This can be done using a nested loop. Sum up the counts for all index in the array and print the sum.
+package ArraysCracker;
+
+public class CountInversions {
+	public static int countInversions(int arr[]) {
+		
+		int n= arr.length;
+		int count=0;
+		
+		for( int i=0; i< arr.length - 1; i++) { //humara first wala loop n-1 tak chalega coz jo second loop hai usme last element hoga
+			for( int j= 1+1; j < arr.length; j++) {
+				if( arr[i] > arr[j]) {
+					count++;
+				}
+			}
+		}
+		return count;
+	}
+
+	public static void main(String[] args) {
+
+		int arr[]= {5,3,2,4,1};
+		int count= countInversions(arr);
+		System.out.println(count);
+	}
+}
 
 //===========================================================Approach 2===========================================
 package ArraysCracker;
