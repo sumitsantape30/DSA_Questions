@@ -126,3 +126,4 @@ public class CountPairswithgivensum {
 	}
 }
 
+Video Solution : https://youtu.be/Tqa9pilFrhY
