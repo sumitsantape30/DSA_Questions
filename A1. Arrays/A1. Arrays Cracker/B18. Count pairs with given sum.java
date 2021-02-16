@@ -115,7 +115,7 @@ public class CountPairswithgivensum {
 			}
 			
 		}
-		return count;
+		return count/2; //sab do bar count ho rhe hai isliye divide by two kiye
 	}
 	
 	public static void main(String[] args) {
