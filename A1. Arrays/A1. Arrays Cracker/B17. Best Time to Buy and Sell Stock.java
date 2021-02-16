@@ -73,9 +73,10 @@ public class buyAndsellStocks {
 		return arr;
 	}
 	
+	//array mese jo sabse minimum rahega and jo sabse maximum rahega usko difference will be my answer
 	public static int maxProfit( int prices[]) {
 		
-		int minPrice= Integer.MAX_VALUE; //we store minimal as integer.max value
+		int minPrice= Integer.MAX_VALUE; //we store minimal as integer.max value, hum minPrice isliye rakh rhe hai taki pure array mese jo sabse price hogi woh usme store hoga and jo humara maximum profit hoga woh difference of minPrice - maxProfit
 		int maxprofit= 0; //we set the max profit as zero
 		
 		for( int i=0; i< prices.length; i++) { //we traverse for the entire prices of stocks and we keep updating the minimal prize if it is minimum
