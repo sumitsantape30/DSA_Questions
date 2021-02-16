@@ -49,13 +49,14 @@ public class nextPermutation {
 		//after that I try to find the break point 
 		int i= arr.length- 2;
 		
-		while( i >= 0 && arr[i] >= arr[i +1] ) { //so the first break point can be at the second last index so i have to start iterating from the second index to check the break points 
+		//we're traversing from back 
+		while( i >= 0 && arr[i] >= arr[i +1] ) { //so the first break point can be at the second last index so i have to start iterating from the second last index to check the break points 
 			i--;
-		}
+		} // yeh loop khatam hone ke bad humare i index woh value aa chuki hai ab hume firse pichese traverse karna hai to find the value(next index) which is greater than i
 			if( i >= 0) {
 				//if and only if we get the break points then we again linearly iterate back and we try to find someone who is greater than arr[i] and once we did that we swap it
 				int j= arr.length- 1;
-				while( arr[j] <= arr[j]) {
+				while( i>=0 && arr[j] <= arr[i]) { //jabtak arr[i] bada hai tabtak loop chalega and loop hone ke bad we'll get value which is greater just next to arr[i]
 					j--;
 				}
 					swap(arr, i, j);
@@ -94,6 +95,7 @@ public class nextPermutation {
 	}
 
 }
+
 
 Time complexity : O(n)O(n). In worst case, only two scans of the whole array are needed.
 
