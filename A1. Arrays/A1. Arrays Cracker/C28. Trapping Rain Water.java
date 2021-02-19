@@ -70,3 +70,4 @@ public class TrappingRainWater {
 		int result= findWater(arr);
 	}
 }
+ video: https://youtu.be/FbGG2qpNp4U
