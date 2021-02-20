@@ -71,6 +71,31 @@ public class SmallestSubarraywithsumgreaterthanagivenvalue {
 		return minLen;
 	}
 	
+	public static int subwithSum(int arr[], int x) {
+		int n= arr.length;
+		
+		int start=0, end=0, minLen= Integer.MAX_VALUE, currSum=0;
+		
+		while( end < n) {
+			
+			while( currSum <= x && end< n) {
+				currSum += arr[end];
+				end++;
+			}
+			
+			while( currSum > x && start< n) {
+				
+				if( end - start < minLen) {
+					minLen= end- start;
+				}
+			currSum -= arr[start];
+				start++;
+			}
+			
+		}
+		return minLen;
+	}
+	
 	public static void main(String[] args) {
 
 		int arr[]= takeInput();
