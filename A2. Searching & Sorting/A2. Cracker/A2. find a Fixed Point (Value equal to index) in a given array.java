@@ -55,4 +55,42 @@ TC= O(n)
 SC= O(1)
 
 //================================================ Approach 2 (Binary Search)================================
+package CrackerSandS;
 
+import java.util.Scanner;
+
+public class fixedPoint {
+	
+	public static int fixUsingBinary(int arr[]) {
+		
+		int start= 0;
+		int end= arr.length-1;
+		
+		while( start <= end) {
+			
+			int mid= start +((end- start)/2);
+			
+			if( arr[mid] == mid) {
+				return mid;
+			}
+			
+			if( mid > arr[mid]) {
+				start= mid+1;
+			}else if( mid < arr[mid]) {
+				end= mid-1;
+			}
+		}
+		return -1;
+	}
+	
+	public static void main(String[] args) {
+
+		int arr[]= {-10, -1, 0, 3 , 10, 11, 30, 50, 100};
+		int point= fixUsingBinary(arr);
+		System.out.println(point);
+	}
+
+}
+
+TC= O(logn)
+SC= O(1)
