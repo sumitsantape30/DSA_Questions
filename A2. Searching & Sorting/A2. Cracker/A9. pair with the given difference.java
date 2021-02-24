@@ -44,3 +44,56 @@ public class PairwithaGivenDifference {
 	}
 
 }
+
+//========================================================= Approach 3===============================================================
+package CrackerSandS;
+import java.util.Arrays;
+
+public class PairwithaGivenDifference {
+public static int checkPairWithDiff( int arr[], int x) {
+		
+		Arrays.sort(arr);
+		
+		for( int i=0; i< arr.length; i++) {
+			
+			int y= arr[i]+ x;
+			boolean isPresent= binarySearch(arr, y);
+			if( isPresent) {
+				return 1;
+			}
+		}
+		return -1;
+	}
+
+	public static boolean binarySearch(int arr[], int n) {
+		
+		int start=0;
+		int end= arr.length-1;
+		
+		while( start <= end) {
+			
+			int mid= start + ((end- start)/2);
+			
+			if( arr[mid]== n) {
+				return true;
+			}
+			
+			if( arr[mid] > n) {
+				end= mid-1;
+			}else {
+				start= mid+1;
+			}
+		}
+		return false;
+	}
+	
+	public static void main(String[] args) {
+
+		int arr[]= {5, 20, 3, 2, 50, 80};
+		int n= 78;
+		int result= checkPairWithDiff(arr, n);
+		System.out.println(result);
+	}
+
+}
+
