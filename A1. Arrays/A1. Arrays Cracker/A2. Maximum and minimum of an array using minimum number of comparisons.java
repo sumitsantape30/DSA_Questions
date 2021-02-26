@@ -131,7 +131,7 @@ public class minAndmaxOfArray2 {
 		}
 		
 		//ab loop mai do do elements ki pair pick karnge aur min and max ke sath compare karenge
-		while( i < n-1) {
+		while( i < n) {
 			
 			if( arr[i]> arr[i+1]) {
 				
