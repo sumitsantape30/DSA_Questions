@@ -47,6 +47,17 @@ public class ReverseString {
 		}
 	}
 	
+	public static String reverse2( String str) {
+		
+		int i= str.length()- 1;
+		String rev= "";
+		
+		for( i =0; i>=0; i--) {
+			rev= rev + str.charAt(i);
+		}
+		return rev;
+	}
+	
 	public static void print( char arr[]) {
 		
 		for( int i=0; i< arr.length; i++) {
