@@ -1,3 +1,5 @@
+Java Program to Check if a string is a valid shuffle of two distinct strings
+
 package DSA_Cracker;
 
 import java.util.Scanner;
